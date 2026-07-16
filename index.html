@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Gift from Gotham | Thank You</title>
+  <meta name="description" content="A cinematic, Gotham-inspired thank-you page built with gratitude to celebrate a thoughtful Batman LEGO collectible gift.">
+  
+  <!-- SEO & Open Graph Metadata -->
+  <meta property="og:title" content="A Gift from Gotham | Thank You">
+  <meta property="og:description" content="A cinematic, Gotham-inspired thank-you page built with gratitude to celebrate a thoughtful Batman LEGO collectible gift.">
+  <meta property="og:type" content="website">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- JS Script (Deferred for performance) -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Distant Lightning Flash Overlay -->
+  <div id="lightning-overlay" class="lightning-flash-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Layered Background System -->
+  <div class="bg-gotham-system" aria-hidden="true">
+    
+    <!-- Animated Clouds -->
+    <div class="cloud-fog-container">
+      <div class="cloud-layer cloud-1"></div>
+      <div class="cloud-layer cloud-2"></div>
+      <div class="cloud-layer cloud-3"></div>
+      <div class="fog-layer"></div>
+    </div>
+
+    <!-- Interactive Moon and Bat -->
+    <div class="moon-container" title="Click the moon for a surprise">
+      <div class="moon">
+        <div class="moon-crater crater-1"></div>
+        <div class="moon-crater crater-2"></div>
+        <div class="moon-crater crater-3"></div>
+        <div class="moon-crater crater-4"></div>
+        <div class="moon-crater crater-5"></div>
+      </div>
+      <!-- Moon Bat Easter Egg -->
+      <svg class="moon-bat" viewBox="0 0 24 16">
+        <path d="M12,5.5 C10.8,4.5 9,4 7.2,4.8 C6,3.6 4.5,3.2 3,3.5 C3.5,4.8 4.2,6.4 5.5,7.2 C4,7.8 2.2,8 0.5,7.8 C1,8.8 2,10.2 3.2,10.8 C4,10 5.2,9.6 6.5,10 C5,10.8 3.8,11.2 2.8,12 C4,12.5 5.5,12 6.8,11.2 C7,11.8 7.5,12.5 8.2,12.8 C9,12.2 9.5,11.2 9.8,10.2 C10.2,11.2 10.7,12.2 11.5,12.8 C12.2,12.5 12.7,11.8 12.9,11.2 C14.2,12 15.7,12.5 16.9,12 C15.9,11.2 14.7,10.8 13.2,10 C14.5,9.6 15.7,10 16.5,10.8 C17.7,10.2 18.7,8.8 19.2,7.8 C17.5,8 15.7,7.8 14.2,7.2 C15.5,6.4 16.2,4.8 16.7,3.5 C15.2,3.2 13.7,3.6 12.5,4.8 C10.7,4 8.9,4.5 7.7,5.5 Z"/>
+      </svg>
+    </div>
+
+    <!-- Searchlights -->
+    <div class="searchlight searchlight-1"></div>
+    <div class="searchlight searchlight-2"></div>
+
+    <!-- Skyline Graphics -->
+    <div class="skyline-graphics">
+      
+      <!-- Layer 1: Far Skyline -->
+      <svg class="skyline-far" viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <path d="M0,400 L0,220 L40,220 L40,160 L90,160 L90,260 L140,260 L140,120 L165,120 L170,80 L175,120 L200,120 L200,280 L250,280 L250,190 L300,190 L300,140 L340,140 L340,240 L380,240 L380,170 L430,170 L430,400 L500,400 L500,200 L540,200 L540,150 L590,150 L590,230 L630,230 L630,100 L660,100 L665,50 L670,100 L700,100 L700,270 L750,270 L750,180 L800,180 L800,130 L840,130 L840,250 L880,250 L880,160 L930,160 L930,400 L1000,400 L1000,210 L1050,210 L1050,140 L1100,140 L1100,240 L1150,240 L1150,180 L1200,180 L1200,400 Z" />
+      </svg>
+
+      <!-- Layer 2: Middle Skyline (with glowing windows) -->
+      <svg class="skyline-mid" viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <!-- Building Outlines -->
+        <path d="M0,400 L0,280 L60,280 L60,200 L130,200 L130,400 L210,400 L210,180 L290,180 L290,150 L340,150 L340,400 L400,400 L400,240 L480,240 L480,400 L560,400 L560,170 L620,170 L620,130 L680,130 L680,400 L720,400 L720,220 L810,220 L810,400 L900,400 L900,190 L980,190 L980,400 L1060,400 L1060,250 L1140,250 L1140,400 L1200,400 Z" />
+        
+        <!-- Windows - Grouped for easy selection. Colors toggle via JS -->
+        <!-- Building at x=60-130 -->
+        <rect class="window-glow dynamic-yellow" x="75" y="220" width="4" height="6" />
+        <rect class="window-glow" x="95" y="220" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="115" y="220" width="4" height="6" />
+        <rect class="window-glow" x="75" y="240" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="95" y="240" width="4" height="6" />
+        <rect class="window-glow" x="115" y="240" width="4" height="6" />
+        <rect class="window-glow" x="75" y="260" width="4" height="6" />
+        <rect class="window-glow" x="95" y="260" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="115" y="260" width="4" height="6" />
+
+        <!-- Building at x=210-290 -->
+        <rect class="window-glow" x="225" y="200" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="245" y="200" width="4" height="6" />
+        <rect class="window-glow" x="265" y="200" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="225" y="220" width="4" height="6" />
+        <rect class="window-glow" x="245" y="220" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="265" y="220" width="4" height="6" />
+        <rect class="window-glow" x="225" y="240" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="245" y="240" width="4" height="6" />
+        <rect class="window-glow" x="265" y="240" width="4" height="6" />
+
+        <!-- Building at x=400-480 -->
+        <rect class="window-glow dynamic-yellow" x="415" y="260" width="4" height="6" />
+        <rect class="window-glow" x="435" y="260" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="455" y="260" width="4" height="6" />
+        <rect class="window-glow" x="415" y="280" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="435" y="280" width="4" height="6" />
+        <rect class="window-glow" x="455" y="280" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="415" y="300" width="4" height="6" />
+        <rect class="window-glow" x="435" y="300" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="455" y="300" width="4" height="6" />
+
+        <!-- Building at x=560-620 -->
+        <rect class="window-glow" x="575" y="190" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="595" y="190" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="575" y="210" width="4" height="6" />
+        <rect class="window-glow" x="595" y="210" width="4" height="6" />
+        <rect class="window-glow" x="575" y="230" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="595" y="230" width="4" height="6" />
+
+        <!-- Building at x=720-810 -->
+        <rect class="window-glow dynamic-yellow" x="735" y="240" width="4" height="6" />
+        <rect class="window-glow" x="755" y="240" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="775" y="240" width="4" height="6" />
+        <rect class="window-glow" x="795" y="240" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="735" y="260" width="4" height="6" />
+        <rect class="window-glow" x="755" y="260" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="775" y="260" width="4" height="6" />
+        <rect class="window-glow" x="795" y="260" width="4" height="6" />
+
+        <!-- Building at x=900-980 -->
+        <rect class="window-glow" x="915" y="210" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="935" y="210" width="4" height="6" />
+        <rect class="window-glow" x="955" y="210" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="915" y="230" width="4" height="6" />
+        <rect class="window-glow" x="935" y="230" width="4" height="6" />
+        <rect class="window-glow dynamic-yellow" x="955" y="230" width="4" height="6" />
+      </svg>
+
+      <!-- Layer 3: Foreground Skyline / Rooftops -->
+      <svg class="skyline-fore" viewBox="0 0 1200 400" preserveAspectRatio="none">
+        <path d="M0,400 L0,330 L100,330 L100,400 L200,400 L200,290 L290,290 L290,400 L410,400 L410,310 L500,310 L500,400 L610,400 L610,270 L690,270 L690,400 L800,400 L800,320 L890,320 L890,400 L990,400 L990,300 L1080,300 L1080,400 L1200,400 Z" />
+        <!-- Antennas & Water Towers -->
+        <rect x="220" y="240" width="16" height="24" fill="#030406" />
+        <path d="M216,240 L240,240 L228,230 Z" fill="#030406" />
+        <line x1="222" y1="264" x2="218" y2="290" stroke="#030406" stroke-width="2" />
+        <line x1="234" y1="264" x2="238" y2="290" stroke="#030406" stroke-width="2" />
+        
+        <line x1="650" y1="270" x2="650" y2="200" stroke="#030406" stroke-width="2.5" />
+        <line x1="642" y1="230" x2="658" y2="230" stroke="#030406" stroke-width="1.5" />
+        <line x1="645" y1="215" x2="655" y2="215" stroke="#030406" stroke-width="1.5" />
+
+        <line x1="1030" y1="300" x2="1030" y2="220" stroke="#030406" stroke-width="2.5" />
+        <line x1="1022" y1="260" x2="1038" y2="260" stroke="#030406" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <!-- Rain Overlay Canvas -->
+    <canvas id="rainCanvas"></canvas>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand" aria-label="Go to top of A Gift from Gotham">
+        <div class="logo-container">
+          <svg class="nav-logo-svg" viewBox="0 0 24 16" width="36" height="24">
+            <path d="M12,5.5 C10.8,4.5 9,4 7.2,4.8 C6,3.6 4.5,3.2 3,3.5 C3.5,4.8 4.2,6.4 5.5,7.2 C4,7.8 2.2,8 0.5,7.8 C1,8.8 2,10.2 3.2,10.8 C4,10 5.2,9.6 6.5,10 C5,10.8 3.8,11.2 2.8,12 C4,12.5 5.5,12 6.8,11.2 C7,11.8 7.5,12.5 8.2,12.8 C9,12.2 9.5,11.2 9.8,10.2 C10.2,11.2 10.7,12.2 11.5,12.8 C12.2,12.5 12.7,11.8 12.9,11.2 C14.2,12 15.7,12.5 16.9,12 C15.9,11.2 14.7,10.8 13.2,10 C14.5,9.6 15.7,10 16.5,10.8 C17.7,10.2 18.7,8.8 19.2,7.8 C17.5,8 15.7,7.8 14.2,7.2 C15.5,6.4 16.2,4.8 16.7,3.5 C15.2,3.2 13.7,3.6 12.5,4.8 C10.7,4 8.9,4.5 7.7,5.5 Z" />
+          </svg>
+        </div>
+        <span class="nav-title">A Gift from Gotham</span>
+      </a>
+
+      <!-- Mobile hamburger menu -->
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Nav Menu Links -->
+      <nav id="primary-navigation">
+        <ul class="nav-menu">
+          <li><a class="nav-link" href="#story">Story</a></li>
+          <li><a class="nav-link" href="#gift">The Gift</a></li>
+          <li><a class="nav-link" href="#setup-gallery">The Setup</a></li>
+          <li><a class="nav-link" href="#signal">The Signal</a></li>
+          <li><a class="nav-link" href="#message">Message</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Website Sections -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="content-container hero-content">
+        <span class="section-label">A Gift Worth Remembering</span>
+        <h1 id="hero-title" class="hero-title">You Brought Gotham To My World</h1>
+        <p class="hero-description">
+          Some gifts are more than objects. They become a memory, a story, and a reminder of the person who chose them for you.
+        </p>
+        <div class="btn-group hero-btn-group">
+          <button id="hero-activate" class="btn btn-primary">Activate the Signal</button>
+          <a href="#message" class="btn btn-secondary">Read My Message</a>
+        </div>
+      </div>
+
+      <!-- Animated Scroll Indicator -->
+      <a href="#story" class="scroll-indicator" aria-label="Scroll down to Story">
+        <span>Scroll Down</span>
+        <div class="mouse-icon">
+          <div class="mouse-wheel"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section id="story" class="reveal" aria-labelledby="story-title">
+      <div class="content-container">
+        <div class="story-grid">
+          <div class="story-content">
+            <span class="section-label">BEHIND THE GIFT</span>
+            <h2 id="story-title" class="section-title">
+              <span class="title-glow-bar" aria-hidden="true"></span>
+              THE SIGNAL COMPLETED THE MISSION
+            </h2>
+            <div class="story-text">
+              <p>
+                  Gotham is built on symbols. This collection became one of mine.
+              </p>
+              <p>
+                  The Bat-Signal, the Batmobiles and every small detail now stand together as one complete collection. When the signal lights up, it does more than brighten the room—it brings Gotham to life.
+              </p>
+              <p>
+                  The mission was simple: complete the Batman car and light collection. You did that perfectly.
+              </p>
+              <p>
+                  Thank you for the Batman LEGOs. Thank you for completing the collection.
+              </p>
+              <p>
+                  And most of all, thank you for gifting me Batman.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Svg Rooftop Story Graphic -->
+          <div class="story-graphic" aria-hidden="true">
+            <svg class="rooftop-projector-svg" viewBox="0 0 200 200">
+              <defs>
+                <linearGradient id="projector-glow-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#f6c445" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#ff8a24" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <!-- Beam glow path -->
+              <polygon points="100,160 30,0 170,0" fill="url(#projector-glow-grad)" />
+              <!-- Rooftops -->
+              <rect x="10" y="160" width="180" height="40" fill="#030406" />
+              <rect x="0" y="180" width="200" height="20" fill="#050608" />
+              <!-- Projector Base -->
+              <rect x="90" y="150" width="20" height="12" fill="#10141b" rx="2" />
+              <path d="M85,162 L115,162 L100,150 Z" fill="#171c25" />
+              <!-- Projector cylinder rotated slightly -->
+              <g transform="rotate(-5, 100, 140)">
+                <rect x="88" y="125" width="24" height="20" fill="#171c25" rx="3" />
+                <rect x="86" y="122" width="28" height="4" fill="#f6c445" />
+                <!-- Glowing Lens -->
+                <ellipse cx="100" cy="122" rx="14" ry="4" fill="#f6c445" />
+              </g>
+              <line x1="90" y1="162" x2="80" y2="185" stroke="#10141b" stroke-width="3" />
+              <line x1="110" y1="162" x2="120" y2="185" stroke="#10141b" stroke-width="3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE GIFT SECTION -->
+    <section id="gift" class="reveal" aria-labelledby="gift-title">
+      <div class="content-container">
+        <span class="section-label">The Collectibles</span>
+        <h2 id="gift-title" class="section-title">
+          <span class="title-glow-bar" aria-hidden="true"></span>
+          What You Really Gave Me
+        </h2>
+        
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <div class="gift-card">
+            <div class="card-icon" aria-hidden="true">
+              <!-- SVG Thought/Gift Icon -->
+              <svg class="card-icon-svg" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+              </svg>
+            </div>
+            <h3 class="card-title">Thought Behind the Gift</h3>
+            <p class="card-text">
+              The best part was knowing that you selected something connected to what I genuinely enjoy.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="gift-card">
+            <div class="card-icon" aria-hidden="true">
+              <!-- SVG Bat/Gotham Icon -->
+              <svg class="card-icon-svg" viewBox="0 0 24 24">
+                <path d="M12,2 L2,22 L22,22 Z M12,6 L18,18 L6,18 Z" />
+              </svg>
+            </div>
+            <h3 class="card-title">A Piece of Gotham</h3>
+            <p class="card-text">
+              The glowing symbol and miniature Batmobiles transformed an ordinary desk into a scene from another world.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="gift-card">
+            <div class="card-icon" aria-hidden="true">
+              <!-- SVG Memory/Hourglass Icon -->
+              <svg class="card-icon-svg" viewBox="0 0 24 24">
+                <path d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zM8 7.5V4h8v3.5l-4 4-4-4z"/>
+              </svg>
+            </div>
+            <h3 class="card-title">A Lasting Memory</h3>
+            <p class="card-text">
+              The collectibles may sit on the desk, but the meaning behind them will stay with me much longer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="setup-gallery section" id="setup-gallery">
+        <div class="section-container">
+
+            <div class="section-heading reveal">
+                <span class="section-label">A PIECE OF GOTHAM</span>
+                <h2>THE GIFT IN ITS NEW HOME</h2>
+                <p>
+                    The Batman LEGO collection did more than add something new
+                    to my desk. It transformed the entire setup into a small
+                    piece of Gotham.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <button
+                    class="gallery-item gallery-item-featured reveal"
+                    type="button"
+                    data-gallery-index="0"
+                    aria-label="Open featured Batman setup photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_005916.jpg"
+                        alt="Batman LEGO figures and Batmobiles displayed beneath a glowing Batman light"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        Gotham gathered beneath the signal
+                    </span>
+                </button>
+
+                <button
+                    class="gallery-item reveal"
+                    type="button"
+                    data-gallery-index="1"
+                    aria-label="Open wide Batman gaming setup photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_005106.jpg"
+                        alt="Wide Batman-themed gaming setup illuminated with red and blue lighting"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        The signal beside Gotham’s skyline
+                    </span>
+                </button>
+
+                <button
+                    class="gallery-item reveal"
+                    type="button"
+                    data-gallery-index="2"
+                    aria-label="Open Batman display and gaming PC photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_005655.jpg"
+                        alt="Batman display beside a red-lit gaming PC and Gotham monitor wallpaper"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        Red light across the desk
+                    </span>
+                </button>
+
+                <button
+                    class="gallery-item reveal"
+                    type="button"
+                    data-gallery-index="3"
+                    aria-label="Open close Batman LEGO setup photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_005742.jpg"
+                        alt="Close view of the glowing Batman light, LEGO figures and Batmobiles"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        Every detail has a story
+                    </span>
+                </button>
+
+            </div>
+
+            <div class="gallery-subheading reveal">
+                <span class="section-label">SHADOWS OF GOTHAM</span>
+                <h3>THE HEROES BEHIND THE SIGNAL</h3>
+                <p>
+                    Small silhouettes, dramatic red light and a few moments that made
+                    the Batman display feel like a scene from Gotham.
+                </p>
+            </div>
+
+            <div class="character-gallery-grid">
+
+                <button
+                    class="gallery-item character-gallery-item reveal"
+                    type="button"
+                    data-gallery-index="4"
+                    aria-label="Open Batman figure holding a weapon photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_013327.jpg"
+                        alt="Batman LEGO figure silhouetted against a glowing red background"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        A silhouette from Gotham
+                    </span>
+                </button>
+
+                <button
+                    class="gallery-item character-gallery-item reveal"
+                    type="button"
+                    data-gallery-index="5"
+                    aria-label="Open Batman figure raising a weapon photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_013337.jpg"
+                        alt="Batman LEGO figure raising a weapon in front of red light"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        Standing beneath the red sky
+                    </span>
+                </button>
+
+                <button
+                    class="gallery-item character-gallery-item reveal"
+                    type="button"
+                    data-gallery-index="6"
+                    aria-label="Open Batman figure with extended wings photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_013350.jpg"
+                        alt="Batman LEGO figure with extended wings silhouetted against red light"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        The Dark Knight rises
+                    </span>
+                </button>
+
+                <button
+                    class="gallery-item character-gallery-item character-gallery-wide reveal"
+                    type="button"
+                    data-gallery-index="7"
+                    aria-label="Open Batman figures displayed in front of red lighting photograph"
+                >
+                    <img
+                        src="assets/images/IMG_20260717_013407.jpg"
+                        alt="Two Batman LEGO figures displayed in front of a red-lit screen"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                    <span class="gallery-caption">
+                        Guardians of the signal
+                    </span>
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SIGNAL SECTION -->
+    <section id="signal" class="reveal" aria-labelledby="signal-title">
+      <div class="content-container">
+        <div class="signal-heading">
+            <span class="heading-line" aria-hidden="true"></span>
+            <h2 id="signal-title">THE BAT-SIGNAL PROJECTION</h2>
+        </div>
+
+        <div class="signal-layout">
+          <!-- Dynamic Bat-Signal component -->
+          <div class="signal-stage" id="signalStage">
+              <div class="logo-light-aura"></div>
+
+              <div class="signal-logo-wrap" id="signalDisc">
+                  <img
+                      src="assets/bat-logo.png"
+                      alt="Red glowing Batman logo"
+                      class="bat-logo-image"
+                  >
+
+                  <div
+                      class="signal-message"
+                      id="signalMessage"
+                      aria-live="polite"
+                  ></div>
+              </div>
+          </div>
+
+          <!-- Controls board -->
+          <div class="signal-controls-card">
+            <h3 class="card-title">Projector Console</h3>
+            <p class="controls-intro">
+              The Bat-Signal stands as a beacon in Gotham's darkest nights. Use the interface controls below to activate, dim, or replay the appreciation messages.
+            </p>
+            <div class="controls-btn-stack">
+              <button id="activateSignal" type="button" class="btn btn-primary">Activate Signal</button>
+              <button id="dimSignal" type="button" class="btn btn-secondary">Dim Signal</button>
+              <button id="replayMessage" type="button" class="btn btn-secondary">Replay Message</button>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-secondary); opacity: 0.8; text-align: center;">
+              Tip: Press <kbd style="color: var(--bat-yellow); font-weight: bold; background: rgba(255,255,255,0.05); padding: 2px 6px;">B</kbd> key to activate, or <kbd style="color: var(--bat-yellow); font-weight: bold; background: rgba(255,255,255,0.05); padding: 2px 6px;">T</kbd> key to replay.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MESSAGE SECTION -->
+    <section id="message" class="reveal" aria-labelledby="message-title">
+      <div class="content-container">
+        <span class="section-label">A MESSAGE FROM GOTHAM</span>
+        <h2 id="message-title" class="section-title">
+          <span class="title-glow-bar" aria-hidden="true"></span>
+          FOR FIONA
+        </h2>
+
+        <div class="message-box">
+          <div class="message-text">
+            <p>
+                Thank you for the Batman LEGOs and for completing my Batmobile and
+                Bat-Signal light collection. Everything looks perfect together now.
+            </p>
+            <p>
+                Most of all, thank you for giving me something that feels so completely
+                me. Thank you for giving me Batman.
+            </p>
+            <p class="message-closing-line">
+                The collection is complete. Now, it is time to protect Gotham.
+            </p>
+          </div>
+          <div class="message-signature">
+              <span class="signature-label">SINCERELY,</span>
+
+              <span class="signature-name">
+                  BRUCE WAYNE
+              </span>
+
+              <span class="signature-real-name">
+                  (Ridwan)
+              </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL THANK-YOU SCENE -->
+    <section id="final-thank-you" aria-labelledby="final-heading">
+      <div class="final-card">
+        <span class="section-label" style="display: block; margin-bottom: 20px;">Whenever The Signal Shines</span>
+        <p style="color: var(--text-secondary); font-size: clamp(1rem, 2.5vw, 1.25rem); line-height: 1.6; margin-bottom: 12px;">
+            The collection is complete.
+        </p>
+
+        <h2 id="final-heading" class="final-quote" style="margin-bottom: 24px;">
+            NOW, IT IS TIME TO PROTECT GOTHAM.
+        </h2>
+
+        <p class="final-recipient final-name-highlight">
+            Thank you, Fiona.
+        </p>
+        
+        <button id="btn-climax-light-up" class="btn btn-primary" style="margin-top: 24px;">Light Up Gotham</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast Notification System -->
+  <div id="notification-container" class="notification-container" aria-live="polite"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p class="footer-gratitude">Made with gratitude in Gotham’s shadow.</p>
+      <p class="footer-author">A thank-you project by Ridwan &copy; <span id="current-year" data-current-year></span></p>
+    </div>
+  </footer>
+
+  <div
+      class="gallery-lightbox"
+      id="galleryLightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Batman setup photograph viewer"
+      aria-hidden="true"
+  >
+      <button
+          class="lightbox-close"
+          id="lightboxClose"
+          type="button"
+          aria-label="Close photograph"
+      >
+          &times;
+      </button>
+
+      <button
+          class="lightbox-navigation lightbox-previous"
+          id="lightboxPrevious"
+          type="button"
+          aria-label="Previous photograph"
+      >
+          &#8249;
+      </button>
+
+      <figure class="lightbox-content">
+          <img
+              id="lightboxImage"
+              src=""
+              alt=""
+          >
+          <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+
+      <button
+          class="lightbox-navigation lightbox-next"
+          id="lightboxNext"
+          type="button"
+          aria-label="Next photograph"
+      >
+          &#8250;
+      </button>
+  </div>
+
+</body>
+</html>
