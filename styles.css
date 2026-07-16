@@ -2448,30 +2448,84 @@ body.thousand-thanks-open {
 .thousand-thanks-actions {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 2.5rem;
 }
 
-body.thousand-thanks-open {
-    overflow: hidden;
+.thanks-action-button {
+    min-width: 210px;
+    min-height: 54px;
+    padding: 0.9rem 1.5rem;
+    border: 1px solid transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.thanks-action-primary {
+    background: linear-gradient(
+        135deg,
+        #ffd568,
+        #efb52b
+    );
+    color: #07090d;
+    border-color: rgba(255, 214, 104, 0.75);
+    box-shadow:
+        0 0 20px rgba(255, 196, 69, 0.25);
+}
+
+.thanks-action-primary:hover,
+.thanks-action-primary:focus-visible {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 34px rgba(255, 196, 69, 0.5),
+        0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.thanks-action-secondary {
+    background: rgba(10, 12, 17, 0.85);
+    color: #f5f5f5;
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.thanks-action-secondary:hover,
+.thanks-action-secondary:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(255, 196, 69, 0.65);
+    color: #ffd568;
+    background: rgba(25, 20, 12, 0.92);
+    box-shadow:
+        0 0 26px rgba(255, 196, 69, 0.2);
+}
+
+.thanks-action-button:active {
+    transform: translateY(0);
+}
+
+.thanks-action-button:focus-visible {
+    outline: 3px solid rgba(255, 196, 69, 0.35);
+    outline-offset: 4px;
 }
 
 @media (max-width: 600px) {
-    .thank-you-wall {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        max-height: 350px;
-    }
-
-    .thank-you-item {
-        font-size: 0.52rem;
-    }
-
     .thousand-thanks-actions {
         flex-direction: column;
+        width: 100%;
     }
 
-    .thousand-thanks-actions button {
-        width: 100%;
+    .thanks-action-button {
+        width: min(100%, 340px);
     }
 }
