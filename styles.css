@@ -2261,6 +2261,217 @@ body.thousand-thanks-open {
                 180deg,
                 rgba(120, 0, 0, 0.14) 0%,
                 rgba(0, 0, 0, 0.66) 100%
-            );
+    }
+}
+
+.thousand-thanks-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    min-height: 52px;
+    padding: 0.85rem 1.4rem;
+    border: 1px solid rgba(255, 196, 69, 0.65);
+    background: linear-gradient(135deg, #ffd568, #efb52b);
+    color: #08090c;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    box-shadow: 0 0 22px rgba(255, 196, 69, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.thousand-thanks-button:hover,
+.thousand-thanks-button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 0 34px rgba(255, 196, 69, 0.45);
+}
+
+.thousand-thanks-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: block;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.97);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.thousand-thanks-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.thousand-thanks-background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 22%, rgba(180, 0, 0, 0.32), transparent 38%),
+        radial-gradient(circle at 20% 80%, rgba(0, 90, 155, 0.14), transparent 30%),
+        #020203;
+    pointer-events: none;
+}
+
+.thousand-thanks-content {
+    position: relative;
+    z-index: 2;
+    width: min(1200px, calc(100% - 2rem));
+    min-height: 100vh;
+    margin-inline: auto;
+    padding: clamp(5rem, 9vw, 8rem) 0 4rem;
+    text-align: center;
+}
+
+.thousand-thanks-content h2 {
+    margin: 0.7rem auto 1rem;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.9;
+    color: #f5f5f5;
+}
+
+.thousand-thanks-close {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 20022; /* Keep close button elevated */
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(8, 9, 12, 0.92);
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.thanks-counter {
+    margin-top: 1.8rem;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 0.8;
+    color: var(--bat-yellow, #f6c445);
+    text-shadow:
+        0 0 22px rgba(255, 196, 69, 0.45),
+        0 0 60px rgba(210, 0, 0, 0.24);
+}
+
+.thanks-counter-label {
+    margin-top: 1rem;
+    color: #a8adb7;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+}
+
+.thank-you-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    gap: 0.4rem;
+    max-height: 430px;
+    margin-top: 3rem;
+    padding: 1rem;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 12, 17, 0.72);
+}
+
+.thank-you-item {
+    padding: 0.48rem 0.3rem;
+    border: 1px solid rgba(255, 60, 60, 0.11);
+    color: rgba(245, 245, 245, 0.82);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    background: rgba(110, 0, 0, 0.1);
+}
+
+.thank-you-item:nth-child(5n) {
+    color: var(--bat-yellow, #f6c445);
+}
+
+.floating-thanks-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating-thank-you {
+    position: absolute;
+    bottom: -3rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    letter-spacing: 0.08em;
+    animation: floatThankYou var(--float-duration) linear forwards;
+}
+
+@keyframes floatThankYou {
+    from {
+        opacity: 0;
+        transform: translateY(0) rotate(var(--float-rotation));
+    }
+
+    15% {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-115vh) rotate(var(--float-rotation));
+    }
+}
+
+.thousand-thanks-final {
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.thousand-thanks-final.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.thousand-thanks-final h3 {
+    margin: 0;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    color: var(--bat-yellow, #f6c445);
+}
+
+.thousand-thanks-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+body.thousand-thanks-open {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .thank-you-wall {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-height: 350px;
+    }
+
+    .thank-you-item {
+        font-size: 0.52rem;
+    }
+
+    .thousand-thanks-actions {
+        flex-direction: column;
+    }
+
+    .thousand-thanks-actions button {
+        width: 100%;
     }
 }
