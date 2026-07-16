@@ -1912,3 +1912,355 @@ body.lightbox-open {
     color: var(--bat-yellow);
     font-weight: 500;
 }
+
+.thousand-thanks-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    min-height: 54px;
+    padding: 0.9rem 1.5rem;
+    border: 1px solid rgba(255, 196, 69, 0.55);
+    background:
+        linear-gradient(
+            135deg,
+            #ffd568,
+            #f2b82d
+        );
+    color: #08090c;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    box-shadow:
+        0 0 22px rgba(255, 196, 69, 0.22);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.thousand-thanks-button:hover,
+.thousand-thanks-button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 34px rgba(255, 196, 69, 0.4);
+}
+
+.thousand-thanks-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.97);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.thousand-thanks-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.thousand-thanks-background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 50% 24%,
+            rgba(180, 0, 0, 0.3),
+            transparent 36%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 88, 150, 0.14),
+            transparent 30%
+        ),
+        #020203;
+    pointer-events: none;
+}
+
+.thousand-thanks-content {
+    position: relative;
+    width: min(1200px, calc(100% - 2rem));
+    min-height: 100vh;
+    margin-inline: auto;
+    padding: clamp(5rem, 9vw, 8rem) 0 4rem;
+    text-align: center;
+}
+
+.thousand-thanks-content h2 {
+    margin: 0.7rem auto 1rem;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.9;
+    color: #f5f5f5;
+}
+
+.thousand-thanks-close {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(8, 9, 12, 0.9);
+    color: #ffffff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.thanks-counter {
+    margin-top: 1.8rem;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 0.8;
+    color: var(--bat-yellow, #f6c445);
+    text-shadow:
+        0 0 22px rgba(255, 196, 69, 0.45),
+        0 0 60px rgba(210, 0, 0, 0.24);
+}
+
+.thanks-counter-label {
+    margin-top: 1rem;
+    color: #a8adb7;
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+}
+
+.thank-you-wall {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(105px, 1fr)
+    );
+    gap: 0.4rem;
+    max-height: 430px;
+    margin-top: 3rem;
+    padding: 1rem;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 12, 17, 0.72);
+}
+
+.thank-you-item {
+    padding: 0.48rem 0.3rem;
+    border: 1px solid rgba(255, 60, 60, 0.11);
+    color: rgba(245, 245, 245, 0.82);
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    background: rgba(110, 0, 0, 0.1);
+}
+
+.thank-you-item:nth-child(5n) {
+    color: var(--bat-yellow, #f6c445);
+}
+
+.thank-you-item:nth-child(9n) {
+    background: rgba(0, 80, 130, 0.12);
+}
+
+.floating-thanks-layer {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-thank-you {
+    position: absolute;
+    bottom: -3rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+    animation: floatThankYou var(--float-duration) linear forwards;
+}
+
+@keyframes floatThankYou {
+    from {
+        opacity: 0;
+        transform:
+            translateY(0)
+            rotate(var(--float-rotation));
+    }
+
+    15% {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 0;
+        transform:
+            translateY(-115vh)
+            rotate(var(--float-rotation));
+    }
+}
+
+.thousand-thanks-final {
+    margin-top: 3rem;
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.thousand-thanks-final.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.thousand-thanks-final h3 {
+    margin: 0;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    color: var(--bat-yellow, #f6c445);
+}
+
+.thousand-thanks-final p {
+    color: #f5f5f5;
+    line-height: 1.7;
+    letter-spacing: 0.12em;
+}
+
+.thousand-thanks-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+body.thousand-thanks-open {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .thank-you-wall {
+        grid-template-columns: repeat(
+            3,
+            minmax(0, 1fr)
+        );
+        max-height: 350px;
+    }
+
+    .thank-you-item {
+        font-size: 0.52rem;
+    }
+
+    .thousand-thanks-actions {
+        flex-direction: column;
+    }
+
+    .thousand-thanks-actions button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-thank-you {
+        display: none;
+    }
+
+    }
+}
+
+/* Background image overrides for Gift & Message sections */
+.themed-photo-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.themed-photo-section .section-photo-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/images/Snapchat-1918881392.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -3;
+    transform: scale(1.03);
+}
+
+.themed-photo-section .section-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.62) 45%,
+            rgba(0, 0, 0, 0.86) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(100, 0, 0, 0.18) 0%,
+            rgba(0, 0, 0, 0.78) 100%
+        );
+    z-index: -2;
+}
+
+.themed-photo-section .section-container {
+    position: relative;
+    z-index: 2;
+}
+
+.themed-photo-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.story-section .section-container,
+.message-section .section-container {
+    position: relative;
+    z-index: 2;
+}
+
+.story-section .content-card {
+    background: rgba(5, 8, 14, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(4px);
+    padding: 32px;
+    border-radius: 4px;
+}
+
+.message-section .message-card {
+    background: rgba(5, 8, 14, 0.72) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+@media (max-width: 700px) {
+    .themed-photo-section .section-photo-bg {
+        background-position: center center;
+        transform: scale(1.02);
+    }
+
+    .themed-photo-section .section-photo-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.62) 0%,
+                rgba(0, 0, 0, 0.84) 58%,
+                rgba(0, 0, 0, 0.92) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(120, 0, 0, 0.14) 0%,
+                rgba(0, 0, 0, 0.66) 100%
+            );
+    }
+}

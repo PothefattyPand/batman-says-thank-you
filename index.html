@@ -155,11 +155,6 @@
   <header class="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-brand" aria-label="Go to top of A Gift from Gotham">
-        <div class="logo-container">
-          <svg class="nav-logo-svg" viewBox="0 0 24 16" width="36" height="24">
-            <path d="M12,5.5 C10.8,4.5 9,4 7.2,4.8 C6,3.6 4.5,3.2 3,3.5 C3.5,4.8 4.2,6.4 5.5,7.2 C4,7.8 2.2,8 0.5,7.8 C1,8.8 2,10.2 3.2,10.8 C4,10 5.2,9.6 6.5,10 C5,10.8 3.8,11.2 2.8,12 C4,12.5 5.5,12 6.8,11.2 C7,11.8 7.5,12.5 8.2,12.8 C9,12.2 9.5,11.2 9.8,10.2 C10.2,11.2 10.7,12.2 11.5,12.8 C12.2,12.5 12.7,11.8 12.9,11.2 C14.2,12 15.7,12.5 16.9,12 C15.9,11.2 14.7,10.8 13.2,10 C14.5,9.6 15.7,10 16.5,10.8 C17.7,10.2 18.7,8.8 19.2,7.8 C17.5,8 15.7,7.8 14.2,7.2 C15.5,6.4 16.2,4.8 16.7,3.5 C15.2,3.2 13.7,3.6 12.5,4.8 C10.7,4 8.9,4.5 7.7,5.5 Z" />
-          </svg>
-        </div>
         <span class="nav-title">A Gift from Gotham</span>
       </a>
 
@@ -213,10 +208,13 @@
     </section>
 
     <!-- STORY SECTION -->
-    <section id="story" class="reveal" aria-labelledby="story-title">
-      <div class="content-container">
+    <section class="story-section themed-photo-section reveal" id="story" aria-labelledby="story-title">
+      <div class="section-photo-bg" aria-hidden="true"></div>
+      <div class="section-photo-overlay" aria-hidden="true"></div>
+
+      <div class="content-container section-container">
         <div class="story-grid">
-          <div class="story-content">
+          <div class="story-content content-card">
             <span class="section-label">BEHIND THE GIFT</span>
             <h2 id="story-title" class="section-title">
               <span class="title-glow-bar" aria-hidden="true"></span>
@@ -544,15 +542,18 @@
     </section>
 
     <!-- MESSAGE SECTION -->
-    <section id="message" class="reveal" aria-labelledby="message-title">
-      <div class="content-container">
+    <section class="message-section themed-photo-section reveal" id="message" aria-labelledby="message-title">
+      <div class="section-photo-bg" aria-hidden="true"></div>
+      <div class="section-photo-overlay" aria-hidden="true"></div>
+
+      <div class="content-container section-container">
         <span class="section-label">A MESSAGE FROM GOTHAM</span>
         <h2 id="message-title" class="section-title">
           <span class="title-glow-bar" aria-hidden="true"></span>
           FOR FIONA
         </h2>
 
-        <div class="message-box">
+        <div class="message-box message-card">
           <div class="message-text">
             <p>
                 Thank you for the Batman LEGOs and for completing my Batmobile and
@@ -576,6 +577,14 @@
               <span class="signature-real-name">
                   (Ridwan)
               </span>
+
+              <button
+                  class="thousand-thanks-button"
+                  id="thousandThanksButton"
+                  type="button"
+              >
+                  SEND 1,000 THANK YOUS
+              </button>
           </div>
         </div>
       </div>
@@ -657,6 +666,90 @@
       >
           &#8250;
       </button>
+  </div>
+
+  <div
+      class="thousand-thanks-overlay"
+      id="thousandThanksOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="thousandThanksTitle"
+      aria-hidden="true"
+  >
+      <div class="thousand-thanks-background" aria-hidden="true"></div>
+
+      <div class="thousand-thanks-content">
+          <button
+              class="thousand-thanks-close"
+              id="thousandThanksClose"
+              type="button"
+              aria-label="Close one thousand thank-yous"
+          >
+              &times;
+          </button>
+
+          <span class="section-label">
+              A MESSAGE FROM GOTHAM
+          </span>
+
+          <h2 id="thousandThanksTitle">
+              1,000 THANK YOUS FOR FIONA
+          </h2>
+
+          <div
+              class="thanks-counter"
+              id="thanksCounter"
+              aria-live="polite"
+          >
+              0
+          </div>
+
+          <p class="thanks-counter-label">
+              THANK YOUS DELIVERED
+          </p>
+
+          <div
+              class="floating-thanks-layer"
+              id="floatingThanksLayer"
+              aria-hidden="true"
+          ></div>
+
+          <div
+              class="thank-you-wall"
+              id="thankYouWall"
+              aria-label="One thousand thank-you messages"
+          ></div>
+
+          <div
+              class="thousand-thanks-final"
+              id="thousandThanksFinal"
+          >
+              <h3>THANK YOU, FIONA.</h3>
+
+              <p>
+                  THE COLLECTION IS COMPLETE.<br>
+                  NOW, IT IS TIME TO PROTECT GOTHAM.
+              </p>
+          </div>
+
+          <div class="thousand-thanks-actions">
+              <button
+                  class="signal-control-button"
+                  id="replayThousandThanks"
+                  type="button"
+              >
+                  REPLAY 1,000 THANK YOUS
+              </button>
+
+              <button
+                  class="signal-control-button"
+                  id="closeThousandThanks"
+                  type="button"
+              >
+                  RETURN TO GOTHAM
+              </button>
+          </div>
+      </div>
   </div>
 
 </body>

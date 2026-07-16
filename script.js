@@ -53,6 +53,7 @@ function initializeSignal() {
     initializeSkyscraperFlicker();
     initializeRainSystem();
     initializeSetupGallery();
+    initializeThousandThanks();
 
     console.log("Image-based Bat logo signal initialized.");
 }
@@ -643,6 +644,215 @@ function initializeSetupGallery() {
             showPrevious();
         } else if (event.key === "ArrowRight") {
             showNext();
+        }
+    });
+}
+
+function initializeThousandThanks() {
+    const openButton =
+        document.getElementById("thousandThanksButton");
+
+    const overlay =
+        document.getElementById("thousandThanksOverlay");
+
+    const closeButton =
+        document.getElementById("thousandThanksClose");
+
+    const secondaryCloseButton =
+        document.getElementById("closeThousandThanks");
+
+    const replayButton =
+        document.getElementById("replayThousandThanks");
+
+    const counter =
+        document.getElementById("thanksCounter");
+
+    const wall =
+        document.getElementById("thankYouWall");
+
+    const finalMessage =
+        document.getElementById("thousandThanksFinal");
+
+    const floatingLayer =
+        document.getElementById("floatingThanksLayer");
+
+    const requiredElements = [
+        openButton,
+        overlay,
+        closeButton,
+        secondaryCloseButton,
+        replayButton,
+        counter,
+        wall,
+        finalMessage,
+        floatingLayer
+    ];
+
+    if (requiredElements.some(element => !element)) {
+        return;
+    }
+
+    const totalThanks = 1000;
+    let animationVersion = 0;
+    let previousFocus = null;
+
+    function openOverlay() {
+        previousFocus = document.activeElement;
+
+        overlay.classList.add("is-open");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("thousand-thanks-open");
+
+        closeButton.focus();
+        startThousandThanks();
+    }
+
+    function closeOverlay() {
+        animationVersion += 1;
+
+        overlay.classList.remove("is-open");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("thousand-thanks-open");
+
+        floatingLayer.replaceChildren();
+
+        if (previousFocus) {
+            previousFocus.focus();
+        }
+    }
+
+    function createFloatingThankYou() {
+        const particle = document.createElement("span");
+
+        particle.className = "floating-thank-you";
+        particle.textContent = "THANK YOU";
+
+        particle.style.left =
+            `${Math.random() * 92 + 4}%`;
+
+        particle.style.fontSize =
+            `${Math.random() * 1.2 + 0.7}rem`;
+
+        particle.style.setProperty(
+            "--float-duration",
+            `${Math.random() * 3 + 4}s`
+        );
+
+        particle.style.setProperty(
+            "--float-rotation",
+            `${Math.random() * 30 - 15}deg`
+        );
+
+        floatingLayer.appendChild(particle);
+
+        window.setTimeout(() => {
+            particle.remove();
+        }, 7500);
+    }
+
+    async function startThousandThanks() {
+        animationVersion += 1;
+        const currentVersion = animationVersion;
+
+        counter.textContent = "0";
+        wall.replaceChildren();
+        floatingLayer.replaceChildren();
+
+        finalMessage.classList.remove("is-visible");
+
+        const batchSize = 25;
+        let created = 0;
+
+        while (
+            created < totalThanks &&
+            currentVersion === animationVersion
+        ) {
+            const fragment =
+                document.createDocumentFragment();
+
+            const remaining =
+                totalThanks - created;
+
+            const amount =
+                Math.min(batchSize, remaining);
+
+            for (let index = 0; index < amount; index += 1) {
+                created += 1;
+
+                const item =
+                    document.createElement("span");
+
+                item.className = "thank-you-item";
+                item.textContent =
+                    `${created}. THANK YOU`;
+
+                fragment.appendChild(item);
+            }
+
+            wall.appendChild(fragment);
+            counter.textContent =
+                created.toLocaleString();
+
+            if (created % 50 === 0) {
+                createFloatingThankYou();
+                createFloatingThankYou();
+            }
+
+            await nextAnimationFrame();
+        }
+
+        if (currentVersion !== animationVersion) {
+            return;
+        }
+
+        counter.textContent = "1,000";
+
+        finalMessage.classList.add("is-visible");
+
+        for (let index = 0; index < 24; index += 1) {
+            window.setTimeout(() => {
+                if (currentVersion === animationVersion) {
+                    createFloatingThankYou();
+                }
+            }, index * 90);
+        }
+
+        console.log(
+            "Exactly 1,000 thank-you messages delivered."
+        );
+    }
+
+    function nextAnimationFrame() {
+        return new Promise(resolve => {
+            window.requestAnimationFrame(resolve);
+        });
+    }
+
+    openButton.addEventListener("click", openOverlay);
+    closeButton.addEventListener("click", closeOverlay);
+    secondaryCloseButton.addEventListener(
+        "click",
+        closeOverlay
+    );
+
+    replayButton.addEventListener(
+        "click",
+        startThousandThanks
+    );
+
+    overlay.addEventListener("click", event => {
+        if (event.target === overlay) {
+            closeOverlay();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (!overlay.classList.contains("is-open")) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeOverlay();
         }
     });
 }
